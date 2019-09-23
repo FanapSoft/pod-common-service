@@ -6,7 +6,6 @@
  * Time: 12:33 PM
  */
 namespace Pod\Common\Service;
-require __DIR__ . '/../vendor/autoload.php';
 
 use Pod\Base\Service\BaseService;
 use Pod\Base\Service\ApiRequestHandler;
