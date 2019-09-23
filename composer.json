@@ -1,0 +1,24 @@
+{
+  "name": "pod-sdk/pod-common-service",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": ["sdk", "pod sdk", "pod sdk common services"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Elham Keshtgar",
+      "email": "podsdk@fanap.ir"
+    }
+  ],
+  "description": "POD SDK Common Services",
+
+  "require": {
+    "ext-openssl": "*",
+    "pod-sdk/pod-base-service" : "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pod\\Common\\Service\\" : "src/"
+    }
+  }
+}
