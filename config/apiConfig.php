@@ -2,55 +2,55 @@
 return [
     'getGuildList' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/guildList',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'GET'
     ],
 
     'getCurrencyList' => [
         'baseUri'   => 'PLATFORM-ADDRESS',
-        'subUri'    => 'nzh/currencyList',
+        'subUri' => 'nzh/doServiceCall',
         'method'    => 'GET'
     ],
 
     'getOtt' => [
         'baseUri'   =>  'PLATFORM-ADDRESS',
-        'subUri'    =>  'nzh/ott',
+        'subUri' => 'nzh/doServiceCall',
         'method'    =>  'GET'
     ],
 
     'addTagTreeCategory' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/addTagTreeCategory',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'POST'
     ],
 
     'getTagTreeCategoryList' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/getTagTreeCategoryList',
+        'subUri' => 'nzh/doServiceCall1',
         'method' => 'GET'
     ],
 
     'updateTagTreeCategory' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/updateTagTreeCategory',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'PUT'
     ],
 
     'addTagTree' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/addTagTree',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'POST'
     ],
 
     'getTagTreeList' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/getTagTreeList',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'GET'
     ],
 
     'updateTagTree' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/biz/updateTagTree',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'POST'
     ],
 ];
