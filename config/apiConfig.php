@@ -26,7 +26,7 @@ return [
 
     'getTagTreeCategoryList' => [
         'baseUri' => 'PLATFORM-ADDRESS',
-        'subUri' => 'nzh/doServiceCall1',
+        'subUri' => 'nzh/doServiceCall',
         'method' => 'GET'
     ],
 

@@ -20,7 +20,7 @@ class CommonService extends BaseService
     public function __construct($baseInfo)
     {
         parent::__construct();
-        self::$jsonSchema = json_decode(file_get_contents(__DIR__. '/../jsonSchema.json'), true);
+        self::$jsonSchema = json_decode(file_get_contents(__DIR__ . '/../config/validationSchema.json'), true);
         $this->header = [
             '_token_issuer_'    =>  $baseInfo->getTokenIssuer(),
             '_token_'           => $baseInfo->getToken()
