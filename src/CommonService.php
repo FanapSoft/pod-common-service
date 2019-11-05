@@ -16,6 +16,7 @@ class CommonService extends BaseService
     private $header;
     private static $commonServiceApi;
     private static $serviceProductId;
+    private static $baseUri;
 
     public function __construct($baseInfo)
     {
@@ -27,6 +28,7 @@ class CommonService extends BaseService
         ];
         self::$commonServiceApi = require __DIR__ . '/../config/apiConfig.php';
         self::$serviceProductId = require __DIR__ . '/../config/serviceProductId.php';
+        self::$baseUri = self::$config[self::$serverType];
     }
 
     public function getGuildList($params){
@@ -52,7 +54,7 @@ class CommonService extends BaseService
 
         # prepare params to send
         # set service call product Id
-        $option['query']['scProductId'] = self::$serviceProductId[$apiName];
+        $option['query']['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option['query'];
@@ -61,7 +63,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             self::$commonServiceApi[$apiName]['method'],
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -93,7 +95,7 @@ class CommonService extends BaseService
 
         # prepare params to send
         # set service call product Id
-        $option['query']['scProductId'] = self::$serviceProductId[$apiName];
+        $option['query']['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option['query'];
@@ -102,7 +104,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             self::$commonServiceApi[$apiName]['method'],
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -133,7 +135,7 @@ class CommonService extends BaseService
 
         # prepare params to send
         # set service call product Id
-        $option['query']['scProductId'] = self::$serviceProductId[$apiName];
+        $option['query']['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option['query'];
@@ -142,7 +144,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             self::$commonServiceApi[$apiName]['method'],
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -176,7 +178,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -186,7 +188,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             $method,
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -221,7 +223,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -230,7 +232,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             self::$commonServiceApi[$apiName]['method'],
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -265,7 +267,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -275,7 +277,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             $method,
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -310,7 +312,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -320,7 +322,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             $method,
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -353,7 +355,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -362,7 +364,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             self::$commonServiceApi[$apiName]['method'],
             self::$commonServiceApi[$apiName]['subUri'],
             $option,
@@ -397,7 +399,7 @@ class CommonService extends BaseService
         self::validateOption($apiName, $option, $paramKey);
         # prepare params to send
         # set service call product Id
-        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName];
+        $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
 
         if (isset($params['scVoucherHash'])) {
             $option['withoutBracketParams'] =  $option[$paramKey];
@@ -407,7 +409,7 @@ class CommonService extends BaseService
         }
 
         return ApiRequestHandler::Request(
-            self::$config[self::$serverType][self::$commonServiceApi[$apiName]['baseUri']],
+            self::$baseUri[self::$commonServiceApi[$apiName]['baseUri']],
             $method,
             self::$commonServiceApi[$apiName]['subUri'],
             $option,

@@ -342,9 +342,10 @@
               }
             }
           },
-        "anyOf": [
+        "oneOf": [
           {"required": ["levelCount", "categoryId", "level"]},
-          {"required": ["levelCount", "categoryId", "parentId"]}
+          {"required": ["levelCount", "categoryId", "parentId"]},
+          {"required": ["id"]}
         ],
         "additionalProperties": false
       }
