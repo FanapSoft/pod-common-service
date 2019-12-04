@@ -14,6 +14,7 @@ use Pod\Base\Service\ApiRequestHandler;
 class CommonService extends BaseService
 {
     private $header;
+    private static $jsonSchema;
     private static $commonServiceApi;
     private static $serviceProductId;
     private static $baseUri;
@@ -50,7 +51,7 @@ class CommonService extends BaseService
             'query' => $params,
         ];
 
-        self::validateOption($apiName, $option);
+        self::validateOption($option, self::$jsonSchema[$apiName]);
 
         # prepare params to send
         # set service call product Id
@@ -91,7 +92,7 @@ class CommonService extends BaseService
             'query' => [],
         ];
 
-        self::validateOption($apiName, $option);
+        self::validateOption($option, self::$jsonSchema[$apiName]);
 
         # prepare params to send
         # set service call product Id
@@ -131,7 +132,7 @@ class CommonService extends BaseService
             'query' => [],
         ];
 
-        self::validateOption($apiName, $option);
+        self::validateOption($option, self::$jsonSchema[$apiName]);
 
         # prepare params to send
         # set service call product Id
@@ -175,7 +176,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
@@ -220,7 +221,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
@@ -264,7 +265,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
@@ -309,7 +310,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
@@ -352,7 +353,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];
@@ -396,7 +397,7 @@ class CommonService extends BaseService
             $paramKey => $params,
         ];
 
-        self::validateOption($apiName, $option, $paramKey);
+        self::validateOption($option, self::$jsonSchema[$apiName], $paramKey);
         # prepare params to send
         # set service call product Id
         $option[$paramKey]['scProductId'] = self::$serviceProductId[$apiName][self::$serverType];

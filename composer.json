@@ -1,6 +1,6 @@
 {
   "name": "pod-sdk/pod-common-service",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "library",
   "keywords": ["sdk", "pod sdk", "pod sdk common services"],
   "license": "MIT",
@@ -14,7 +14,7 @@
 
   "require": {
     "ext-openssl": "*",
-    "pod-sdk/pod-base-service" : "^3.0"
+    "pod-sdk/pod-base-service" : "^3.0.1"
   },
   "autoload": {
     "psr-4": {
