@@ -278,6 +278,10 @@
                   "type": "integer",
                   "title": "َشناسه دسته بندی برچسب"
               },
+            "code": {
+                  "type": "string",
+                  "title": "َکد برچسب"
+              },
             "parentId": {
                   "type": "integer",
                   "title": "شناسه والد برچسب"
@@ -289,7 +293,7 @@
               }
             }
           },
-          "required": ["name", "categoryId"],
+          "required": ["name", "code", "categoryId"],
           "additionalProperties": false
       }
   },
@@ -322,6 +326,14 @@
             "parentId": {
                 "type": "integer",
                 "title": "شناسه والد برچسب"
+            },
+            "parentCode": {
+                "type": "string",
+                "title": "کد برچسب والد"
+            },
+            "includeParent": {
+                "type": ["string", "boolean"],
+                "title": "خروجی شامل نود والد باشد یا خیر"
             },
             "levelCount": {
               "type": "integer",

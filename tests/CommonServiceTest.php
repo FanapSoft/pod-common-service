@@ -349,9 +349,11 @@ final class CommonServiceTest extends TestCase {
 
     public function testAddTagTreeRequiredParameters() {
         $name = uniqid("TestTagTree");
+        $code = uniqid("TestTagTree");
         $params = [
             ## ============== Required Parameters  =================
             "name"              => $name,
+            "code"              => $code,
             "categoryId"        => 521,
             "parentId"          => 2296,
 //            "apiToken"          => "{Put Api Token}",
@@ -379,6 +381,9 @@ final class CommonServiceTest extends TestCase {
 
             $this->assertArrayHasKey('name', $validation);
             $this->assertEquals('The property name is required', $validation['name'][0]);
+            
+            $this->assertArrayHasKey('code', $validation);
+            $this->assertEquals('The property code is required', $validation['code'][0]);
 
             $this->assertArrayHasKey('categoryId', $validation);
             $this->assertEquals('The property categoryId is required', $validation['categoryId'][0]);
